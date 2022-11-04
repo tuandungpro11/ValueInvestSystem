@@ -143,7 +143,6 @@ function Navbar() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  console.log(theme);
   return (
     <>
       <AppBar position="fixed" open={open}>
