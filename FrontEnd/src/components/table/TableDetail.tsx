@@ -1,43 +1,19 @@
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableRow,
-  Typography,
-} from "@mui/material";
-import { Box } from "@mui/system";
-
+import TableTree from "./TableTree";
+import { Box } from "@mui/material";
 function TableDetail({ detailRow }: any) {
+  console.log(detailRow[0].Values);
   return (
-    <Box sx={{ margin: 1 }}>
-      <Typography variant="h6" gutterBottom component="div">
-        Chi tiết
-      </Typography>
-      <Table size="small" aria-label="purchases">
-        <TableHead>
-          <TableRow>
-            <TableCell>Name</TableCell>
-            {/* {detailRow.Values?.map((row: any, index: number) => (
-              <TableCell
-                key={index}
-                sx={{ fontSize: "28px", color: "#FF6464" }}
-              >
-                {row.Period}
-              </TableCell>
-            ))} */}
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {detailRow?.map((Row: any) => (
-            <TableRow key={Row.ID}>
-              <TableCell component="th" scope="row">
-                {Row.Name}
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+    <Box
+      sx={{
+        padding: "8px 12px 0 12px",
+        border: "1px solid",
+      }}
+    >
+      <TableTree
+        label={"Chit Tiết"}
+        listAssets={detailRow}
+        rowPeriod={detailRow[0].Values}
+      />
     </Box>
   );
 }

@@ -38,9 +38,6 @@ function TabsDepartment() {
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
-  const { listStock } = useSelector((state: any) => state.stock);
-  console.log(listStock);
-
   return (
     <Box sx={{ width: "100%" }}>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
@@ -56,7 +53,7 @@ function TabsDepartment() {
       </Box>
       {tabs?.map((tab: any, index: number) => (
         <TabPanel key={index} value={value} index={index}>
-          <TableCollapsible id={tab.ID} />
+          <TableCollapsible id={tab.ID} period={tab.Values} />
         </TabPanel>
       ))}
     </Box>
